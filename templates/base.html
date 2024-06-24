@@ -10,22 +10,31 @@
 </head>
 <body>
     <header>
-        <img src="logo" alt="logo">
-        <h1>Вы находитесь в {{ title }}</h1>
-        <a href="#">USER</a>
+        <img src="logo" alt="logo" class='left-bar'>
+        <h1 class='content'>Вы находитесь в {{ title }}</h1>
+        <a href="#" class='user-menu'>USER</a>
     </header>
     <main>
         <div class='left-bar'>
-            <ul>
+            <ul class='menu'>
                 {% for cat in menu %}
                 <li>
                     <a href="{% url cat.url_name %}">{{cat.title}}</a>
                 </li>
                 {% endfor %}    
             </ul>
+            <ul class='settings'>
+                <li>USER INFORMATION</li>
+                <li>SETTINGS</li>
+                <li>HOT SETTINGS</li>
+            </li>
         </div>
         <div class='content'>
             {% block content %}{% endblock %}    
+        </div>
+        <div class="right-bar">
+            <img src="img" alt="current img">
+            <div class="img-info">Здесь отображается информация о выбранном элементе</div>
         </div>
     </main>
     <footer>Здесь футер</footer>
