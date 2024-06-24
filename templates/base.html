@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIEW MAGIC :: {{title}}</title>
+    <link type="text/css" href="{% static 'main_window/css/styles.css' %}" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <img src="logo" alt="logo">
+        <h1>Вы находитесь в {{ title }}</h1>
+        <a href="#">USER</a>
+    </header>
+    <main>
+        <div class='left-bar'>
+            <ul>
+                {% for cat in menu %}
+                <li>
+                    <a href="{% url cat.url_name %}">{{cat.title}}</a>
+                </li>
+                {% endfor %}    
+            </ul>
+        </div>
+        <div class='content'>
+            {% block content %}{% endblock %}    
+        </div>
+    </main>
+    <footer>Здесь футер</footer>
+</body>
+</html>
