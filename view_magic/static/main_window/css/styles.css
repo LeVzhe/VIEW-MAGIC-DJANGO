@@ -1,5 +1,5 @@
 body {
-    height: 92vh;
+    min-height: 92vh;
     background-color: antiquewhite;
     padding: 10px;
     width: 95%;
@@ -11,7 +11,7 @@ header {
     display: inline-flex;
     width: 100%;
     margin-bottom: 5px;
-    height: 15%;
+    min-height: 8vh;
 }
 
 
@@ -19,19 +19,23 @@ main {
     border: 1px black solid;
     display: inline-flex;
     width: 100%;
-    height: 80%;
+    min-height: 78vh;
 }
 
 .left-bar {
     border: 1px black solid; 
     margin: 10px;
-    width: 20%;   
+    width: 20%;
+    max-height: 80hv;
+    overflow: auto;  
+    object-fit: contain;  
 }
 
 .menu {
     border: 1px black solid;
     margin: 3px;
-    padding: 5px; 
+    padding: 5px;
+     
 }
 
 .settings {
@@ -59,21 +63,26 @@ main {
     width: 20%;
     display: flex;
     flex-direction: column;
-    height: 90hv;
+    max-height: 80hv;
+    object-fit: contain;
 }
 
 .right-bar img {
     border: 1px black solid; 
-    flex: 40%; /* Изображение занимает 40% высоты */
+    flex: 40px;
     object-fit: contain;
     margin: 3px;
+    max-height: 210px;
+    max-width: 250px;
+    overflow: auto;
 }
+
 
 .img-info {
     border: 1px black solid;
     margin: 3px;
     padding: 5px;
-    flex: 55%; /* Информационный блок занимает 55% высоты */
+    flex: 55vh; 
     background-color: lightgray;  
 }
 
@@ -81,7 +90,7 @@ footer {
     border: 1px black solid;
     width: 100%;
     margin-top: 5px;
-    height: 3%;   
+    min-height: 4vh;   
 }
 
 .user-menu {
@@ -90,4 +99,29 @@ footer {
     width: 20%;
     display: flex;
     flex-direction: column;   
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;    
+}
+
+.content-frame {
+    border: solid black 1px;
+    width: 33%;
+    height: 300px;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 1px;
+}
+
+.add-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    color: rgb(167, 161, 161);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 10em;
+    border: solid rgb(167, 161, 161) 2px;
 }
