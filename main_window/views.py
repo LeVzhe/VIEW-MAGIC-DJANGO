@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views.decorators.cache import never_cache
 
 from .models import PhotosContent
 
@@ -18,13 +19,18 @@ def index(request):
     }
     return render(request, 'main_window/index.html', context=data)
 
+
 def show_photos(request):
+    db_content.update()
     data = {
         'menu': categories,
         'title': 'Ваши фотографии',
         'content': db_content,
     }
-    return render(request, 'main_window/show_photos.html', context=data)
+    if request.method == 'GET':
+        return render(request, 'main_window/show_photos.html', context=data)
+    else:
+        return render(request, 'main_window/show_photos.html')
 
 def show_videos(request):
     data = {
