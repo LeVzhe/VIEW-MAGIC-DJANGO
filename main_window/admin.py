@@ -1,4 +1,8 @@
 from django.contrib import admin
-from .models import ContentDb
+from .models import PhotosContent
 
-admin.site.register(ContentDb)
+class PhotosContentAdmin(admin.ModelAdmin):
+    list_display = ('user_name', 'description', 'create_time', 'is_hidden')
+    list_display_links = ('user_name', 'description')
+
+admin.site.register(PhotosContent, PhotosContentAdmin)

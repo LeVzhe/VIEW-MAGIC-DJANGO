@@ -1,10 +1,16 @@
 from django.db import models
 
-class ContentDb(models.Model):
-    name_field = models.CharField(max_length=20, verbose_name='Название')
-    path_field = models.CharField(max_length=20, verbose_name='Папка')
-    url_field = models.URLField(verbose_name='Адрес')
-    image_field = models.ImageField(upload_to='main_window/db_content/img/', verbose_name='Фото')
-    file_field = models.FileField(upload_to='main_window/db_content/videos/', verbose_name='Видео')
-    description_field = models.TextField(verbose_name='Информация')
-    date_time = models.DateTimeField(auto_now=True, verbose_name='Время загрузки')
+class PhotosContent(models.Model):
+    user_name = models.CharField(max_length=20, verbose_name='Название')
+    load_img = models.ImageField(upload_to='main_window/db_content/img/', verbose_name='Фото')
+    description = models.TextField(verbose_name='Информация')
+    create_time = models.DateTimeField(auto_now=True, verbose_name='Время создания')
+    is_hidden = models.BooleanField(verbose_name='Поле скрыто', default=False)
+
+    class Meta:
+        verbose_name_plural = 'Списки фотографий'
+        verbose_name = 'Список загруженных фотографий'
+        ordering = ['-create_time']
+        
+    def __str__(self):
+        return self.user_name
