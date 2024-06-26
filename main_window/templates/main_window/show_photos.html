@@ -3,8 +3,8 @@
 {% block content %}
 <div class='container'>
     {% comment %} временная мера {% endcomment %}
-    {% for i in '12' %} 
-    <div class='content-frame'><img src="{% static "main_window/db_content/img/" %}{{i}}.jpg" alt="фото"></div>
+    {% for i in content %} 
+    <div class='content-frame'><img src="{% static "/" %}{{i.load_img}}" alt="фото"></div>
     {% endfor %}
     <div class='content-frame add-content'>+</div>
 </div>

@@ -1,5 +1,9 @@
 from django.shortcuts import render
 
+from .models import PhotosContent
+
+db_content = PhotosContent.objects.all()
+
 categories = [
     {'title': 'Главная страница', 'url_name': 'home'},
     {'title': 'Фотографии', 'url_name': 'photos'},
@@ -17,7 +21,8 @@ def index(request):
 def show_photos(request):
     data = {
         'menu': categories,
-        'title': 'Ваши фотографии'
+        'title': 'Ваши фотографии',
+        'content': db_content,
     }
     return render(request, 'main_window/show_photos.html', context=data)
 
