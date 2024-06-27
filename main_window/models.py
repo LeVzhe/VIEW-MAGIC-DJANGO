@@ -5,7 +5,7 @@ def custom_image_name(instance, filename):
     return 'main_window/db_content/{0}/{1}/{2}'.format(instance.file_type, instance.user_name, filename)
 
 class PhotosContent(models.Model):
-    user_name = models.CharField(max_length=20, verbose_name='Имя пользователя')
+    user_name = models.CharField(max_length=20, verbose_name='Имя пользователя') #нужно сделать связь одного пользователя ко многим
     load_img = models.ImageField(upload_to=custom_image_name, verbose_name='Фото')
     description = models.TextField(verbose_name='Информация')
     create_time = models.DateTimeField(auto_now=True, verbose_name='Время создания')

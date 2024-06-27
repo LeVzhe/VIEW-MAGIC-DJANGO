@@ -1,9 +1,15 @@
 {% extends "base.html" %}
+{% load custom_filters %}
 {% load static %}
 {% block content %}
 <div class='container'>
-    {% for i in content %} 
-    <div class='content-frame'><img src="{% static "/" %}{{i.load_img}}" alt="фото"></div>
+    {% for i in content %}
+    {% with i.load_img.name|split:'/' as path_part %}
+    <div class='content-frame'>
+        <img src="{% static 'main_window/db_content/' %}{{i.file_type}}/{{i.user_name}}/{{path_part}}" 
+        alt="фото">
+    </div>
+    {% endwith %}
     {% endfor %}
     <div class='content-frame add-content'>+</div>
 </div>
