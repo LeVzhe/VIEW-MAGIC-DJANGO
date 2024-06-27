@@ -2,7 +2,6 @@
 {% load static %}
 {% block content %}
 <div class='container'>
-    {% comment %} временная мера {% endcomment %}
     {% for i in content %} 
     <div class='content-frame'><img src="{% static "/" %}{{i.load_img}}" alt="фото"></div>
     {% endfor %}
