@@ -1,6 +1,6 @@
 body {
     min-height: 92vh;
-    background-color: antiquewhite;
+    background-color: rgb(240, 227, 227);
     padding: 10px;
     width: 95%;
     border: 1px black solid;
@@ -113,9 +113,15 @@ footer {
     box-sizing: border-box;
     text-align: center;
     margin: 1px;
+    cursor: pointer;
+}
+
+.content-frame:hover {
+    border-color: rgb(18, 172, 64);
 }
 
 .add-content {
+    user-select: none; /* Стандартный атрибут для запрета выделения */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -124,6 +130,13 @@ footer {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 10em;
     border: solid rgb(167, 161, 161) 2px;
+    cursor: pointer;
+    transition: color 1s ease;
+}
+
+.add-content:hover {
+    border-color: rgb(105, 102, 102);
+    color: rgb(105, 102, 102);
 }
 
 .content-frame img {
