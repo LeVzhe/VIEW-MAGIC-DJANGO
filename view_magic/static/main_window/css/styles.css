@@ -107,13 +107,14 @@ footer {
 }
 
 .content-frame {
-    border: solid black 1px;
+    border: solid black 2px;
     width: 33%;
     height: 300px;
     box-sizing: border-box;
     text-align: center;
     margin: 1px;
     cursor: pointer;
+    transition: border 0.3s ease;
 }
 
 .content-frame:hover {
@@ -131,7 +132,9 @@ footer {
     font-size: 10em;
     border: solid rgb(167, 161, 161) 2px;
     cursor: pointer;
-    transition: color 1s ease;
+    transition: 
+        color 0.3s ease,
+        border 0.3s ease;
 }
 
 .add-content:hover {
