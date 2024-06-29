@@ -1,11 +1,23 @@
 from django.db import models
 import time, os
 
+
+class UserList(models.Model):
+    user_name = models.CharField(max_length=20, verbose_name='Имя пользователя', unique=True)
+
+    class Meta:
+        verbose_name = 'Имя пользователя'
+        verbose_name_plural = 'Имена пользователей'
+
+    def __str__(self):
+        return self.user_name
+
 def custom_image_name(instance, filename):
-    return 'main_window/db_content/{0}/{1}/{2}'.format(instance.user_name, instance.file_type, filename)
+    return 'main_window/db_content/{0}/{1}/{2}'.format(instance.user_list.user_name, instance.file_type, filename)
+
 
 class PhotosContent(models.Model):
-    user_name = models.CharField(max_length=20, verbose_name='Имя пользователя', blank=False, null=False) #нужно сделать связь одного пользователя ко многим
+    user_list = models.ForeignKey(UserList, on_delete=models.CASCADE)
     load_img = models.ImageField(upload_to=custom_image_name, verbose_name='Фото', blank=False, null=False)
     description = models.TextField(verbose_name='Информация')
     create_time = models.DateTimeField(auto_now=True, verbose_name='Время создания')
@@ -18,7 +30,7 @@ class PhotosContent(models.Model):
         ordering = ['-create_time']
         
     def __str__(self):
-        return self.user_name
+        return self.user_list.user_name
     
     def save(self, *args, **kwargs):
         new_image_name = str(int(time.time()))
