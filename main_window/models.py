@@ -2,7 +2,7 @@ from django.db import models
 import time, os
 
 def custom_image_name(instance, filename):
-    return 'main_window/db_content/{0}/{1}/{2}'.format(instance.file_type, instance.user_name, filename)
+    return 'main_window/db_content/{0}/{1}/{2}'.format(instance.user_name, instance.file_type, filename)
 
 class PhotosContent(models.Model):
     user_name = models.CharField(max_length=20, verbose_name='Имя пользователя', blank=False, null=False) #нужно сделать связь одного пользователя ко многим

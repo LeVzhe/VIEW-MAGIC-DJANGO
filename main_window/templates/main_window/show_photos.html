@@ -6,7 +6,7 @@
     {% for i in content %}
     {% with i.load_img.name|split:'/' as only_file_name %}
     <div class='content-frame'>
-        <img src="{% static 'main_window/db_content/' %}{{i.file_type}}/{{i.user_name}}/{{only_file_name}}" 
+        <img src="{% static 'main_window/db_content/' %}{{i.user_name}}/{{i.file_type}}/{{only_file_name}}" 
         alt="фото">
     </div>
     {% endwith %}
