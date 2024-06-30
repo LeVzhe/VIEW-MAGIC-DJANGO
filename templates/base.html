@@ -14,9 +14,14 @@
 </head>
 <body>
     <header>
-        <img src="logo" alt="logo" class='left-bar'>
-        <h1 class='content'>Вы находитесь в {{ title }}</h1>
-        <a href="#" class='user-menu'>USER</a>
+        <div class='left-bar logo'>
+            <img src="{% static "main_window/img/vm-logo.png" %}" alt="logo">
+        </div>
+        <h1 class='content h-title'>Вы находитесь в {{ title }}</h1>
+        <div class='user-menu'>
+            <a href="#" >USER</a>
+        </div>
+
     </header>
     <main>
         <div class='left-bar'>

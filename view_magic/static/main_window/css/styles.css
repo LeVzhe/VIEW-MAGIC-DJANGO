@@ -1,74 +1,122 @@
 body {
     min-height: 92vh;
-    background-color: rgb(240, 227, 227);
     padding: 10px;
-    width: 95%;
-    border: 1px black solid;
+    width: 97%;
 }
 
 header {
-    border: 1px black solid;
+    border: 1px #BFBFBF solid;
+    border-radius: 25px 25px 0 0;
+    border-bottom: 2px #9F9F9F solid;
     display: inline-flex;
     width: 100%;
-    margin-bottom: 5px;
-    min-height: 8vh;
+    margin-bottom: 2px;
+    max-height: 82px;
 }
 
 
 main {
-    border: 1px black solid;
+    border: 1px #9F9F9F solid;
+    border-top: 2px #9F9F9F solid;
+    border-bottom: 2px #BABABA solid;
     display: inline-flex;
     width: 100%;
     min-height: 78vh;
 }
 
 .left-bar {
-    border: 1px black solid; 
+    border-right: 1px #D4D4D4 solid; 
     margin: 10px;
+    padding-right: 20px;
     width: 20%;
-    max-height: 80hv;
+    height: auto;
     overflow: auto;  
-    object-fit: contain;  
+    object-fit: contain;
+    overflow: hidden;
 }
 
 .menu {
-    border: 1px black solid;
     margin: 3px;
-    padding: 5px;
-     
+    padding: 25px 5px 5px 25px;
+    list-style-type: none;
+    margin-bottom: 20vh;     
+}
+
+.menu li {
+    font-size: 24px;
+    margin-bottom: 15px;
+    height: 30px;
+    transition: 
+        font 0.3s ease;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #45878A;
+    cursor: default;
+    cursor: pointer;
+}
+
+.menu li:hover{
+    font-size: 25px;
+}
+
+.menu li a:hover{
+    color:#85A150;
 }
 
 .settings {
-    border: 1px black solid;
+    position: inherit;
+    border: 2px #BFBFBF solid;
+    border-radius: 20px 0 20px 0px;
     margin: 3px;
-    padding: 5px; 
+    padding: 5px;
+    list-style-type: none;   
 }
 
 .settings li {
-    border: 1px black solid;
+    border: 1px #A65553 solid;
     border-radius: 10px;
+    color: #45878A;
+    background-color: #b9cf91;
     margin: 5px;
-    padding: 5px; 
+    padding: 5px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    transition: 
+        color 0.3s ease,
+        border 0.3s ease,
+        background 0.3s ease; 
+}
+
+.settings li:hover {
+    border: 1px #45878A solid;
+    color: #ffffff;
+    font-weight: bolder;
+    background-color: #A65553;
 }
 
 .content {
-    border: 1px black solid; 
     margin: 10px;
     width: 58%;     
 }
 
 .right-bar {
-    border: 1px black solid; 
+    border-left: 1px #D4D4D4 solid; 
     margin: 10px;
     width: 20%;
     display: flex;
     flex-direction: column;
     max-height: 80hv;
     object-fit: contain;
+    padding-left: 10px;
 }
 
 .right-bar img {
-    border: 1px black solid; 
+    border: solid #85A150 2px;
+    border-radius: 20px;
+    height: 300px;
     flex: 40px;
     object-fit: contain;
     margin: 3px;
@@ -79,26 +127,36 @@ main {
 
 
 .img-info {
-    border: 1px black solid;
+    border: 2px #D4D4D4 solid;
+    border-radius: 25px 0px 25px 0;
     margin: 3px;
-    padding: 5px;
-    flex: 55vh; 
-    background-color: lightgray;  
+    padding: 25px;
+    flex: 55vh;
+    color: #45878A;
 }
 
 footer {
-    border: 1px black solid;
+    border: 1px #BABABA solid;
+    border-top: 2px #BABABA solid;
+    border-radius: 0 0 25px 25px;
+    text-align: center;
     width: 100%;
-    margin-top: 5px;
-    min-height: 4vh;   
+    margin-top: 2px;
+    min-height: 8vh;   
 }
 
 .user-menu {
-    border: 1px black solid; 
+    font-size: 40px;
+    border-left: 1px #D4D4D4 solid; 
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 10px;
     width: 20%;
     display: flex;
-    flex-direction: column;   
+    flex-direction: column;
+    padding-left: 10px;
 }
 
 .container {
@@ -107,7 +165,7 @@ footer {
 }
 
 .content-frame {
-    border: solid rgb(167, 161, 161) 2px;
+    border: solid #BABABA 2px;
     border-radius: 20px;
     width: 33%;
     height: 300px;
@@ -126,7 +184,7 @@ footer {
 }
 
 .content-frame:hover {
-    border-color: rgb(18, 172, 64);
+    border-color: #85A150;
 }
 
 
@@ -136,10 +194,10 @@ footer {
     align-items: center;
     justify-content: center;
     height: 300px;
-    color: rgb(167, 161, 161);
+    color: #BABABA;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 10em;
-    border: solid rgb(167, 161, 161) 2px;
+    border: solid #BABABA 2px;
     cursor: pointer;
     transition: 
         color 0.3s ease,
@@ -147,8 +205,29 @@ footer {
 }
 
 .add-content:hover {
-    border-color: rgb(18, 172, 64);
-    color: rgb(18, 172, 64);
+    border-color: #85A150;
+    color: #85A150;
 }
 
+.logo {
+    border-right: 1px #D4D4D4 solid; 
+    height: 60px;
+}
 
+.left-bar img {
+    width: 100%; /* чтобы изображение занимало 100% ширины своего родителя */
+    height: auto; /* чтобы соотношение сторон изображения автоматически подстраивалось */
+    display: block; /* чтобы изображение правильно размещалось внутри .left-bar */
+    left: 50%;
+    top: 50%;
+    transform: translate(00%, -40%);
+}
+
+.h-title {
+    border: 0px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #A65553; 
+}
